@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "iris-classifier"
+    static_configs:
+      - targets: ["172.20.10.9:8000"]

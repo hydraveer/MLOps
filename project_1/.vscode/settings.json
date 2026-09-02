@@ -1,0 +1,21 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/venv/lib/python3.14/site-packages"
+  ],
+  "python.analysis.indexing": true,
+  "python.analysis.packageIndexDepth": 3,
+  "[python]": {
+    "editor.suggestSelection": "first",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    },
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "on"
+  }
+}
