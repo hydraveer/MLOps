@@ -65,6 +65,27 @@
 - prediction_requests_total → count per flower type
 - prediction_latency_ms → how fast predictions are
 
+## Retraining Pipeline
+
+### Why
+- Manual retraining doesn't scale
+- New data arrives → need to retrain automatically
+- Never replace a good model with a worse one
+
+### Champion/Challenger Pattern
+- Champion = current production model
+- Challenger = newly trained model
+- Only promote challenger if accuracy > champion
+
+### Key Functions
+- get_champion_accuracy() → fetches current champion metrics from MLflow
+- train_new_model() → trains with new params, logs to MLflow
+- promote_if_better() → compares and promotes if strictly better
+
+### Condition
+- Use > not >= in production
+- Tying is not a reason to replace a stable model
+
 ### Commands
 ```bash
 # Start monitoring stack
