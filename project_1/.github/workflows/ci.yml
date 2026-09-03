@@ -1,19 +1,19 @@
 name: MLOps Pipeline
 
-On:
+on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3ls
-      
+        uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -22,9 +22,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r project_1/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run tests
         run: |
           pip install pytest
-          pytest project_1/tests/ -v
+          pytest tests/ -v
