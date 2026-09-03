@@ -22,9 +22,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r project_1/requirements.txt
 
       - name: Run tests
         run: |
           pip install pytest
-          pytest tests/ -v
+          pytest project_1/tests/ -v
